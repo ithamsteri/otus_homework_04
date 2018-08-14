@@ -1,5 +1,7 @@
 #include "../inc/print_ip.h"
 
+using namespace ip;
+
 int main(int, char *[]) {
     std::cout << "string:\t\t\t\t\t\t";
     print_ip(std::cout, std::string{"string"});
