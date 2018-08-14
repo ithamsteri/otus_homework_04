@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -117,6 +117,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structis__tuple__imp_3_01std_1_1tuple_3_01U_8_8_8_4_01_4.html">is_tuple_imp&lt; std::tuple&lt; U...&gt; &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structis__tuple.html">is_tuple&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprint__tuple.html">print_tuple&lt; T, N, is_first &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprint__tuple_3_01T_00_011_00_01false_01_4.html">print_tuple&lt; T, 1, false &gt;</a></td></tr>
@@ -128,9 +130,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Функции</h2></td></tr>
-<tr class="memitem:a1add2250308e693c9d8fadd372967963"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a1add2250308e693c9d8fadd372967963"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a1add2250308e693c9d8fadd372967963">is_tuple</a> ()</td></tr>
-<tr class="separator:a1add2250308e693c9d8fadd372967963"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac18f31837b624c901615ec14e3cde716"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ac18f31837b624c901615ec14e3cde716"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_same<br class="typebreak"/>
 &lt; T, std::string &gt;::value, <br class="typebreak"/>
@@ -148,37 +147,12 @@ T::value_type &gt; &gt;::value||std::is_same<br class="typebreak"/>
 &lt; T, std::list&lt; typename <br class="typebreak"/>
 T::value_type &gt; &gt;::value, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a34e5b4ea0259585a62d549c8eeb5b0da">print_ip</a> (std::ostream &amp;ostream, const T &amp;value)</td></tr>
 <tr class="separator:a34e5b4ea0259585a62d549c8eeb5b0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a899fc2e0ea04021268f65415a486ad7b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a899fc2e0ea04021268f65415a486ad7b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="print__ip_8h.html#a1add2250308e693c9d8fadd372967963">is_tuple</a>&lt; T &gt;<br class="typebreak"/>
-), void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a899fc2e0ea04021268f65415a486ad7b">print_ip</a> (std::ostream &amp;ostream, const T &amp;value)</td></tr>
-<tr class="separator:a899fc2e0ea04021268f65415a486ad7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0f709b3628b8e19c41075528527b8c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8a0f709b3628b8e19c41075528527b8c"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structis__tuple.html">is_tuple</a>&lt; T &gt;<br class="typebreak"/>
+::value, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a8a0f709b3628b8e19c41075528527b8c">print_ip</a> (std::ostream &amp;ostream, const T &amp;value)</td></tr>
+<tr class="separator:a8a0f709b3628b8e19c41075528527b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Функции</h2>
-<a class="anchor" id="a1add2250308e693c9d8fadd372967963"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr bool is_tuple </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Проверть является ли тип T типом std::tuple. </p>
-<dl class="retval"><dt>Возвращаемые значения</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">true</td><td>- тип T является типом std::tuple. </td></tr>
-    <tr><td class="paramname">false</td><td>- тип T не является типом std::tuple. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="ac18f31837b624c901615ec14e3cde716"></a>
 <div class="memitem">
 <div class="memproto">
@@ -204,7 +178,7 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Вывести строку в поток ostream. </p>
+<p>Вывести строку в поток ostream.</p>
 <dl class="tparams"><dt>Параметры шаблона</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>имеет тип std::string. </td></tr>
@@ -246,7 +220,7 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Вывести целочисленное значение в формате ip в поток ostream. </p>
+<p>Вывести целочисленное значение в формате ip в поток ostream.</p>
 <dl class="tparams"><dt>Параметры шаблона</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>имеет любой внутренний целочисленный тип. </td></tr>
@@ -288,7 +262,7 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Вывести std::list или std::vector в формате ip в поток ostream. </p>
+<p>Вывести std::list или std::vector в формате ip в поток ostream.</p>
 <dl class="tparams"><dt>Параметры шаблона</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>имеет тип std::list или std::vector. </td></tr>
@@ -305,14 +279,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a899fc2e0ea04021268f65415a486ad7b"></a>
+<a class="anchor" id="a8a0f709b3628b8e19c41075528527b8c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if_t&lt;<a class="el" href="print__ip_8h.html#a1add2250308e693c9d8fadd372967963">is_tuple</a>&lt;T&gt;), void&gt; print_ip </td>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="structis__tuple.html">is_tuple</a>&lt;T&gt;::value, void&gt; print_ip </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>ostream</em>, </td>
@@ -330,7 +304,7 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Вывести кортеж в поток ostream. </p>
+<p>Вывести кортеж в поток ostream.</p>
 <dl class="tparams"><dt>Параметры шаблона</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>имеет тип std::tuple. </td></tr>

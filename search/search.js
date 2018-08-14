@@ -10,8 +10,9 @@ var indexSectionsWithContent =
   0: "impv",
   1: "ip",
   2: "mpv",
-  3: "impv",
-  4: "p"
+  3: "mpv",
+  4: "v",
+  5: "p"
 };
 
 var indexSectionNames =
@@ -20,7 +21,8 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "defines"
+  4: "variables",
+  5: "defines"
 };
 
 function convertToId(search)

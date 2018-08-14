@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,93 +94,95 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structis__tuple__imp.html">    9</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structis__tuple__imp.html">is_tuple_imp</a> : std::false_type {};</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span>... U&gt;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structis__tuple__imp_3_01std_1_1tuple_3_01U_8_8_8_4_01_4.html">   12</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structis__tuple__imp.html">is_tuple_imp</a>&lt;std::tuple&lt;U...&gt;&gt; : std::true_type {};</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structis__tuple__imp.html">   12</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structis__tuple__imp.html">is_tuple_imp</a> : std::false_type {};</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="print__ip_8h.html#a1add2250308e693c9d8fadd372967963">   20</a></span>&#160;constexpr <span class="keywordtype">bool</span> <a class="code" href="print__ip_8h.html#a1add2250308e693c9d8fadd372967963">is_tuple</a>() {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structis__tuple__imp.html">is_tuple_imp&lt;std::decay_t&lt;T&gt;</a>&gt;::value;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">typename</span> std::enable_if_t&lt;std::is_same&lt;T, std::string&gt;::value, <span class="keywordtype">void</span>&gt;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">   32</a></span>&#160;<a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;value) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ostream &lt;&lt; value;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">typename</span> std::enable_if_t&lt;std::is_integral&lt;T&gt;::value, <span class="keywordtype">void</span>&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="print__ip_8h.html#acf1d42a6020516ffbc627c6dc83e1703">   44</a></span>&#160;<a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;value) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    constexpr <span class="keyword">auto</span> byte_Size = 8;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; <span class="keyword">sizeof</span>(T); ++i) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        ostream &lt;&lt; ((value &gt;&gt; byte_Size * (<span class="keyword">sizeof</span>(T) - 1 - i)) &amp; 0xFF);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (i != <span class="keyword">sizeof</span>(T) - 1) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            ostream &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">typename</span> std::enable_if_t&lt;std::is_same&lt;T, std::vector&lt;typename T::value_type&gt;&gt;::value || std::is_same&lt;T, std::list&lt;typename T::value_type&gt;&gt;::value, <span class="keywordtype">void</span>&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="print__ip_8h.html#a34e5b4ea0259585a62d549c8eeb5b0da">   63</a></span>&#160;<a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;value) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> size = value.size();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>  it   = value.begin();;) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(ostream, *it);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (++it != value.end()) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            ostream &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N, <span class="keywordtype">bool</span> is_first = true&gt;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structprint__tuple.html">   82</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structprint__tuple.html">print_tuple</a> {</div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structprint__tuple.html#a39f2ac307476edf752433ab58572c456">   83</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structprint__tuple.html#a39f2ac307476edf752433ab58572c456">print</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;t) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="structprint__tuple.html#a39f2ac307476edf752433ab58572c456">print_tuple&lt;T, N - 1, false&gt;::print</a>(ostream, t);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(ostream, std::get&lt;N - 1&gt;(t));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span> (!is_first) { ostream &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>; }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_011_00_01false_01_4.html">   95</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structprint__tuple.html">print_tuple</a>&lt;T, 1, false&gt; {</div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_011_00_01false_01_4.html#a01f231302450fae7d106c0dc528fc05a">   96</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structprint__tuple_3_01T_00_011_00_01false_01_4.html#a01f231302450fae7d106c0dc528fc05a">print</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;t) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(ostream, std::get&lt;0&gt;(t));</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        ostream &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_011_00_01true_01_4.html">  107</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structprint__tuple.html">print_tuple</a>&lt;T, 1, true&gt; {</div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_011_00_01true_01_4.html#ad5f7422c4c63dca1a123bf73c260f361">  108</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structprint__tuple_3_01T_00_011_00_01true_01_4.html#ad5f7422c4c63dca1a123bf73c260f361">print</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;t) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(ostream, std::get&lt;0&gt;(t));</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_010_01_4.html">  118</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structprint__tuple.html">print_tuple</a>&lt;T, 0&gt; {</div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_010_01_4.html#ae32b322b21e59eeb6bc1e4c024512db7">  119</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structprint__tuple_3_01T_00_010_01_4.html#ae32b322b21e59eeb6bc1e4c024512db7">print</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;t) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keyword">typename</span> std::enable_if_t&lt;is_tuple&lt;T&gt;(), <span class="keywordtype">void</span>&gt;</div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="print__ip_8h.html#a899fc2e0ea04021268f65415a486ad7b">  131</a></span>&#160;<a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;value) {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="structprint__tuple.html">print_tuple&lt;T, std::tuple_size&lt;T&gt;::value</a>&gt;::print(ostream, value);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="ttc" id="structprint__tuple_html"><div class="ttname"><a href="structprint__tuple.html">print_tuple</a></div><div class="ttdef"><b>Definition:</b> print_ip.h:82</div></div>
-<div class="ttc" id="structprint__tuple_html_a39f2ac307476edf752433ab58572c456"><div class="ttname"><a href="structprint__tuple.html#a39f2ac307476edf752433ab58572c456">print_tuple::print</a></div><div class="ttdeci">static void print(std::ostream &amp;ostream, const T &amp;t)</div><div class="ttdef"><b>Definition:</b> print_ip.h:83</div></div>
-<div class="ttc" id="structprint__tuple_3_01T_00_011_00_01false_01_4_html_a01f231302450fae7d106c0dc528fc05a"><div class="ttname"><a href="structprint__tuple_3_01T_00_011_00_01false_01_4.html#a01f231302450fae7d106c0dc528fc05a">print_tuple&lt; T, 1, false &gt;::print</a></div><div class="ttdeci">static void print(std::ostream &amp;ostream, const T &amp;t)</div><div class="ttdef"><b>Definition:</b> print_ip.h:96</div></div>
-<div class="ttc" id="structprint__tuple_3_01T_00_010_01_4_html_ae32b322b21e59eeb6bc1e4c024512db7"><div class="ttname"><a href="structprint__tuple_3_01T_00_010_01_4.html#ae32b322b21e59eeb6bc1e4c024512db7">print_tuple&lt; T, 0 &gt;::print</a></div><div class="ttdeci">static void print(std::ostream &amp;ostream, const T &amp;t)</div><div class="ttdef"><b>Definition:</b> print_ip.h:119</div></div>
-<div class="ttc" id="structis__tuple__imp_html"><div class="ttname"><a href="structis__tuple__imp.html">is_tuple_imp</a></div><div class="ttdef"><b>Definition:</b> print_ip.h:9</div></div>
-<div class="ttc" id="print__ip_8h_html_ac18f31837b624c901615ec14e3cde716"><div class="ttname"><a href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a></div><div class="ttdeci">std::enable_if_t&lt; std::is_same&lt; T, std::string &gt;::value, void &gt; print_ip(std::ostream &amp;ostream, const T &amp;value)</div><div class="ttdef"><b>Definition:</b> print_ip.h:32</div></div>
-<div class="ttc" id="print__ip_8h_html_a1add2250308e693c9d8fadd372967963"><div class="ttname"><a href="print__ip_8h.html#a1add2250308e693c9d8fadd372967963">is_tuple</a></div><div class="ttdeci">constexpr bool is_tuple()</div><div class="ttdef"><b>Definition:</b> print_ip.h:20</div></div>
-<div class="ttc" id="structprint__tuple_3_01T_00_011_00_01true_01_4_html_ad5f7422c4c63dca1a123bf73c260f361"><div class="ttname"><a href="structprint__tuple_3_01T_00_011_00_01true_01_4.html#ad5f7422c4c63dca1a123bf73c260f361">print_tuple&lt; T, 1, true &gt;::print</a></div><div class="ttdeci">static void print(std::ostream &amp;ostream, const T &amp;t)</div><div class="ttdef"><b>Definition:</b> print_ip.h:108</div></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span>... U&gt;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structis__tuple__imp_3_01std_1_1tuple_3_01U_8_8_8_4_01_4.html">   18</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structis__tuple__imp.html">is_tuple_imp</a>&lt;std::tuple&lt;U...&gt;&gt; : std::true_type {};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structis__tuple.html">   24</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structis__tuple.html">is_tuple</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structis__tuple.html#ace6fda356c841badda289f6fed86b711">   26</a></span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">bool</span> <a class="code" href="structis__tuple.html#ace6fda356c841badda289f6fed86b711">value</a> = <a class="code" href="structis__tuple__imp.html">is_tuple_imp&lt;std::decay_t&lt;T&gt;</a>&gt;<a class="code" href="structis__tuple.html#ace6fda356c841badda289f6fed86b711">::value</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">typename</span> std::enable_if_t&lt;std::is_same&lt;T, std::string&gt;::value, <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">   38</a></span>&#160;<a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;value) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    ostream &lt;&lt; value;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">typename</span> std::enable_if_t&lt;std::is_integral&lt;T&gt;::value, <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="print__ip_8h.html#acf1d42a6020516ffbc627c6dc83e1703">   51</a></span>&#160;<a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;value) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    constexpr <span class="keyword">auto</span> byte_Size = 8;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; <span class="keyword">sizeof</span>(T); ++i) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        ostream &lt;&lt; ((value &gt;&gt; byte_Size * (<span class="keyword">sizeof</span>(T) - 1 - i)) &amp; 0xFF);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (i != <span class="keyword">sizeof</span>(T) - 1) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            ostream &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">typename</span> std::enable_if_t&lt;std::is_same&lt;T, std::vector&lt;typename T::value_type&gt;&gt;::value || std::is_same&lt;T, std::list&lt;typename T::value_type&gt;&gt;::value, <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="print__ip_8h.html#a34e5b4ea0259585a62d549c8eeb5b0da">   71</a></span>&#160;<a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;value) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> size = value.size();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>  it   = value.begin();;) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(ostream, *it);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (++it != value.end()) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            ostream &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N, <span class="keywordtype">bool</span> is_first = true&gt;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structprint__tuple.html">   90</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structprint__tuple.html">print_tuple</a> {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structprint__tuple.html#a39f2ac307476edf752433ab58572c456">   97</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structprint__tuple.html#a39f2ac307476edf752433ab58572c456">print</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;t) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="structprint__tuple.html#a39f2ac307476edf752433ab58572c456">print_tuple&lt;T, N - 1, false&gt;::print</a>(ostream, t);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(ostream, std::get&lt;N - 1&gt;(t));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (!is_first) { ostream &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>; }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;};</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_011_00_01false_01_4.html">  109</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structprint__tuple.html">print_tuple</a>&lt;T, 1, false&gt; {</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_011_00_01false_01_4.html#a01f231302450fae7d106c0dc528fc05a">  115</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structprint__tuple_3_01T_00_011_00_01false_01_4.html#a01f231302450fae7d106c0dc528fc05a">print</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;t) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(ostream, std::get&lt;0&gt;(t));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        ostream &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_011_00_01true_01_4.html">  126</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structprint__tuple.html">print_tuple</a>&lt;T, 1, true&gt; {</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_011_00_01true_01_4.html#ad5f7422c4c63dca1a123bf73c260f361">  132</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structprint__tuple_3_01T_00_011_00_01true_01_4.html#ad5f7422c4c63dca1a123bf73c260f361">print</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;t) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(ostream, std::get&lt;0&gt;(t));</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_010_01_4.html">  142</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structprint__tuple.html">print_tuple</a>&lt;T, 0&gt; {</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="structprint__tuple_3_01T_00_010_01_4.html#ae32b322b21e59eeb6bc1e4c024512db7">  146</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structprint__tuple_3_01T_00_010_01_4.html#ae32b322b21e59eeb6bc1e4c024512db7">print</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;t) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;};</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keyword">typename</span> std::enable_if_t&lt;is_tuple&lt;T&gt;::value, <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="print__ip_8h.html#a8a0f709b3628b8e19c41075528527b8c">  159</a></span>&#160;<a class="code" href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a>(std::ostream &amp;ostream, <span class="keyword">const</span> T &amp;value) {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="structprint__tuple.html">print_tuple&lt;T, std::tuple_size&lt;T&gt;::value</a>&gt;::print(ostream, value);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+<div class="ttc" id="structprint__tuple_html"><div class="ttname"><a href="structprint__tuple.html">print_tuple</a></div><div class="ttdef"><b>Definition:</b> print_ip.h:90</div></div>
+<div class="ttc" id="structprint__tuple_html_a39f2ac307476edf752433ab58572c456"><div class="ttname"><a href="structprint__tuple.html#a39f2ac307476edf752433ab58572c456">print_tuple::print</a></div><div class="ttdeci">static void print(std::ostream &amp;ostream, const T &amp;t)</div><div class="ttdef"><b>Definition:</b> print_ip.h:97</div></div>
+<div class="ttc" id="structprint__tuple_3_01T_00_011_00_01false_01_4_html_a01f231302450fae7d106c0dc528fc05a"><div class="ttname"><a href="structprint__tuple_3_01T_00_011_00_01false_01_4.html#a01f231302450fae7d106c0dc528fc05a">print_tuple&lt; T, 1, false &gt;::print</a></div><div class="ttdeci">static void print(std::ostream &amp;ostream, const T &amp;t)</div><div class="ttdef"><b>Definition:</b> print_ip.h:115</div></div>
+<div class="ttc" id="structprint__tuple_3_01T_00_010_01_4_html_ae32b322b21e59eeb6bc1e4c024512db7"><div class="ttname"><a href="structprint__tuple_3_01T_00_010_01_4.html#ae32b322b21e59eeb6bc1e4c024512db7">print_tuple&lt; T, 0 &gt;::print</a></div><div class="ttdeci">static void print(std::ostream &amp;ostream, const T &amp;t)</div><div class="ttdef"><b>Definition:</b> print_ip.h:146</div></div>
+<div class="ttc" id="structis__tuple__imp_html"><div class="ttname"><a href="structis__tuple__imp.html">is_tuple_imp</a></div><div class="ttdef"><b>Definition:</b> print_ip.h:12</div></div>
+<div class="ttc" id="print__ip_8h_html_ac18f31837b624c901615ec14e3cde716"><div class="ttname"><a href="print__ip_8h.html#ac18f31837b624c901615ec14e3cde716">print_ip</a></div><div class="ttdeci">std::enable_if_t&lt; std::is_same&lt; T, std::string &gt;::value, void &gt; print_ip(std::ostream &amp;ostream, const T &amp;value)</div><div class="ttdef"><b>Definition:</b> print_ip.h:38</div></div>
+<div class="ttc" id="structis__tuple_html"><div class="ttname"><a href="structis__tuple.html">is_tuple</a></div><div class="ttdef"><b>Definition:</b> print_ip.h:24</div></div>
+<div class="ttc" id="structprint__tuple_3_01T_00_011_00_01true_01_4_html_ad5f7422c4c63dca1a123bf73c260f361"><div class="ttname"><a href="structprint__tuple_3_01T_00_011_00_01true_01_4.html#ad5f7422c4c63dca1a123bf73c260f361">print_tuple&lt; T, 1, true &gt;::print</a></div><div class="ttdeci">static void print(std::ostream &amp;ostream, const T &amp;t)</div><div class="ttdef"><b>Definition:</b> print_ip.h:132</div></div>
+<div class="ttc" id="structis__tuple_html_ace6fda356c841badda289f6fed86b711"><div class="ttname"><a href="structis__tuple.html#ace6fda356c841badda289f6fed86b711">is_tuple::value</a></div><div class="ttdeci">static constexpr bool value</div><div class="ttdoc">Хранит значение true, если T является типом std::tuple, else в остальных случаях. ...</div><div class="ttdef"><b>Definition:</b> print_ip.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
