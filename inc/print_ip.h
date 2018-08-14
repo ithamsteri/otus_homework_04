@@ -9,13 +9,15 @@
  * Вспомогательный класс для реализации класса is_tuple.
  */
 template<typename T>
-struct is_tuple_imp : std::false_type {};
+struct is_tuple_imp : std::false_type {
+};
 
 /**
  * Вспомогательный класс для реализации класса is_tuple.
  */
 template<typename... U>
-struct is_tuple_imp<std::tuple<U...>> : std::true_type {};
+struct is_tuple_imp<std::tuple<U...>> : std::true_type {
+};
 
 /**
  * Класс, позволяющий определить является ли тип T типом std::tuple.
@@ -27,8 +29,8 @@ struct is_tuple {
 };
 
 /**
- * Вывести строку в поток ostream.
  * @ingroup print_ip
+ * @brief Вывести строку в поток ostream.
  * @tparam T имеет тип std::string.
  * @param ostream ссылка на поток вывода.
  * @param value строка, которую нужно вывести в ostream.
@@ -40,8 +42,8 @@ print_ip(std::ostream &ostream, const T &value) {
 }
 
 /**
- * Вывести целочисленное значение в формате ip в поток ostream.
  * @ingroup print_ip
+ * @brief Вывести целочисленное значение в формате ip в поток ostream.
  * @tparam T имеет любой внутренний целочисленный тип.
  * @param ostream ссылка на поток вывода.
  * @param value целочисленное значение, которое необходимо вывести в формате ip.
@@ -60,17 +62,18 @@ print_ip(std::ostream &ostream, const T &value) {
 }
 
 /**
- * Вывести std::list или std::vector в формате ip в поток ostream.
  * @ingroup print_ip
+ * @brief Вывести std::list или std::vector в формате ip в поток ostream.
  * @tparam T имеет тип std::list или std::vector.
  * @param ostream ссылка на поток вывода.
  * @param value значение, которое необходимо вывести в формате ip.
  */
 template<typename T>
-typename std::enable_if_t<std::is_same<T, std::vector<typename T::value_type>>::value || std::is_same<T, std::list<typename T::value_type>>::value, void>
+typename std::enable_if_t<std::is_same<T, std::vector<typename T::value_type>>::value ||
+                          std::is_same<T, std::list<typename T::value_type>>::value, void>
 print_ip(std::ostream &ostream, const T &value) {
     const auto size = value.size();
-    for (auto  it   = value.begin();;) {
+    for (auto it = value.begin();;) {
         print_ip(ostream, *it);
         if (++it != value.end()) {
             ostream << ".";
@@ -148,8 +151,8 @@ struct print_tuple<T, 0> {
 };
 
 /**
- * Вывести кортеж в поток ostream.
  * @ingroup print_ip
+ * @brief Вывести кортеж в поток ostream.
  * @tparam T имеет тип std::tuple.
  * @param ostream ссылка на поток вывода.
  * @param value значение, которое необходимо вывести в формате ip.
