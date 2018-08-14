@@ -30,8 +30,7 @@ struct is_tuple {
 
 namespace ip {
     /**
-     * @ingroup print_ip
-     * @brief Вывести строку в поток ostream.
+     * Вывести строку в поток ostream.
      * @tparam T имеет тип std::string.
      * @param ostream ссылка на поток вывода.
      * @param value строка, которую нужно вывести в ostream.
@@ -43,8 +42,7 @@ namespace ip {
     }
 
     /**
-     * @ingroup print_ip
-     * @brief Вывести целочисленное значение в формате ip в поток ostream.
+     * Вывести целочисленное значение в формате ip в поток ostream.
      * @tparam T имеет любой внутренний целочисленный тип.
      * @param ostream ссылка на поток вывода.
      * @param value целочисленное значение, которое необходимо вывести в формате ip.
@@ -64,8 +62,7 @@ namespace ip {
 
 
     /**
-     * @ingroup print_ip
-     * @brief Вывести std::list или std::vector в формате ip в поток ostream.
+     * Вывести std::list или std::vector в формате ip в поток ostream.
      * @tparam T имеет тип std::list или std::vector.
      * @param ostream ссылка на поток вывода.
      * @param value значение, которое необходимо вывести в формате ip.
@@ -155,8 +152,7 @@ struct print_tuple<T, 0> {
 
 namespace ip {
     /**
-     * @ingroup print_ip
-     * @brief Вывести кортеж в поток ostream.
+     * Вывести кортеж в поток ostream.
      * @tparam T имеет тип std::tuple.
      * @param ostream ссылка на поток вывода.
      * @param value значение, которое необходимо вывести в формате ip.
