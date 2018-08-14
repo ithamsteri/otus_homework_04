@@ -12,9 +12,9 @@ template<typename... U>
 struct is_tuple_imp<std::tuple<U...>> : std::true_type {};
 
 /**
- * Проверть является ли тип T типом std::tuple.
- * @retval true - тип T является типом std::tuple.
- * @retval false - тип T не является типом std::tuple.
+ * РџСЂРѕРІРµСЂС‚СЊ СЏРІР»СЏРµС‚СЃСЏ Р»Рё С‚РёРї T С‚РёРїРѕРј std::tuple.
+ * @retval true - С‚РёРї T СЏРІР»СЏРµС‚СЃСЏ С‚РёРїРѕРј std::tuple.
+ * @retval false - С‚РёРї T РЅРµ СЏРІР»СЏРµС‚СЃСЏ С‚РёРїРѕРј std::tuple.
  */
 template<typename T>
 constexpr bool is_tuple() {
@@ -22,10 +22,10 @@ constexpr bool is_tuple() {
 }
 
 /**
- * Вывести строку в поток ostream.
- * @tparam T имеет тип std::string.
- * @param ostream ссылка на поток вывода.
- * @param value строка, которую нужно вывести в ostream.
+ * Р’С‹РІРµСЃС‚Рё СЃС‚СЂРѕРєСѓ РІ РїРѕС‚РѕРє ostream.
+ * @tparam T РёРјРµРµС‚ С‚РёРї std::string.
+ * @param ostream СЃСЃС‹Р»РєР° РЅР° РїРѕС‚РѕРє РІС‹РІРѕРґР°.
+ * @param value СЃС‚СЂРѕРєР°, РєРѕС‚РѕСЂСѓСЋ РЅСѓР¶РЅРѕ РІС‹РІРµСЃС‚Рё РІ ostream.
  */
 template<typename T>
 typename std::enable_if_t<std::is_same<T, std::string>::value, void>
@@ -34,10 +34,10 @@ print_ip(std::ostream &ostream, const T &value) {
 }
 
 /**
- * Вывести целочисленное значение в формате ip в поток ostream.
- * @tparam T имеет любой внутренний целочисленный тип.
- * @param ostream ссылка на поток вывода.
- * @param value целочисленное значение, которое необходимо вывести в формате ip.
+ * Р’С‹РІРµСЃС‚Рё С†РµР»РѕС‡РёСЃР»РµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ С„РѕСЂРјР°С‚Рµ ip РІ РїРѕС‚РѕРє ostream.
+ * @tparam T РёРјРµРµС‚ Р»СЋР±РѕР№ РІРЅСѓС‚СЂРµРЅРЅРёР№ С†РµР»РѕС‡РёСЃР»РµРЅРЅС‹Р№ С‚РёРї.
+ * @param ostream СЃСЃС‹Р»РєР° РЅР° РїРѕС‚РѕРє РІС‹РІРѕРґР°.
+ * @param value С†РµР»РѕС‡РёСЃР»РµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ РЅРµРѕР±С…РѕРґРёРјРѕ РІС‹РІРµСЃС‚Рё РІ С„РѕСЂРјР°С‚Рµ ip.
  */
 template<typename T>
 typename std::enable_if_t<std::is_integral<T>::value, void>
@@ -53,10 +53,10 @@ print_ip(std::ostream &ostream, const T &value) {
 }
 
 /**
- * Вывести std::list или std::vector в формате ip в поток ostream.
- * @tparam T имеет тип std::list или std::vector.
- * @param ostream ссылка на поток вывода.
- * @param value значение, которое необходимо вывести в формате ip.
+ * Р’С‹РІРµСЃС‚Рё std::list РёР»Рё std::vector РІ С„РѕСЂРјР°С‚Рµ ip РІ РїРѕС‚РѕРє ostream.
+ * @tparam T РёРјРµРµС‚ С‚РёРї std::list РёР»Рё std::vector.
+ * @param ostream СЃСЃС‹Р»РєР° РЅР° РїРѕС‚РѕРє РІС‹РІРѕРґР°.
+ * @param value Р·РЅР°С‡РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ РЅРµРѕР±С…РѕРґРёРјРѕ РІС‹РІРµСЃС‚Рё РІ С„РѕСЂРјР°С‚Рµ ip.
  */
 template<typename T>
 typename std::enable_if_t<std::is_same<T, std::vector<typename T::value_type>>::value || std::is_same<T, std::list<typename T::value_type>>::value, void>
@@ -73,10 +73,10 @@ print_ip(std::ostream &ostream, const T &value) {
 }
 
 /**
- * Класс, отвечающий за вывод типа std::tuple в поток ostream.
- * @tparam T имеет тип std::tuple.
- * @tparam N номер элемента кортежа.
- * @tparam is_first параметр, указывающий что это первый элемент кортежа (нужен чтобы не выводить лишнего символа '.').
+ * РљР»Р°СЃСЃ, РѕС‚РІРµС‡Р°СЋС‰РёР№ Р·Р° РІС‹РІРѕРґ С‚РёРїР° std::tuple РІ РїРѕС‚РѕРє ostream.
+ * @tparam T РёРјРµРµС‚ С‚РёРї std::tuple.
+ * @tparam N РЅРѕРјРµСЂ СЌР»РµРјРµРЅС‚Р° РєРѕСЂС‚РµР¶Р°.
+ * @tparam is_first РїР°СЂР°РјРµС‚СЂ, СѓРєР°Р·С‹РІР°СЋС‰РёР№ С‡С‚Рѕ СЌС‚Рѕ РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РєРѕСЂС‚РµР¶Р° (РЅСѓР¶РµРЅ С‡С‚РѕР±С‹ РЅРµ РІС‹РІРѕРґРёС‚СЊ Р»РёС€РЅРµРіРѕ СЃРёРјРІРѕР»Р° '.').
  */
 template<typename T, std::size_t N, bool is_first = true>
 struct print_tuple {
@@ -88,8 +88,8 @@ struct print_tuple {
 };
 
 /**
- * Специализация класса print_tuple, отвечая за вывод 0-го элемента кортежа в поток ostream.
- * @tparam T имеет тип std::tuple.
+ * РЎРїРµС†РёР°Р»РёР·Р°С†РёСЏ РєР»Р°СЃСЃР° print_tuple, РѕС‚РІРµС‡Р°СЏ Р·Р° РІС‹РІРѕРґ 0-РіРѕ СЌР»РµРјРµРЅС‚Р° РєРѕСЂС‚РµР¶Р° РІ РїРѕС‚РѕРє ostream.
+ * @tparam T РёРјРµРµС‚ С‚РёРї std::tuple.
  */
 template<typename T>
 struct print_tuple<T, 1, false> {
@@ -100,8 +100,8 @@ struct print_tuple<T, 1, false> {
 };
 
 /**
- * Специализация класса print_tuple, отвечая за вывод 0-го элемента кортежа в поток ostream.
- * @tparam T имеет тип std::tuple.
+ * РЎРїРµС†РёР°Р»РёР·Р°С†РёСЏ РєР»Р°СЃСЃР° print_tuple, РѕС‚РІРµС‡Р°СЏ Р·Р° РІС‹РІРѕРґ 0-РіРѕ СЌР»РµРјРµРЅС‚Р° РєРѕСЂС‚РµР¶Р° РІ РїРѕС‚РѕРє ostream.
+ * @tparam T РёРјРµРµС‚ С‚РёРї std::tuple.
  */
 template<typename T>
 struct print_tuple<T, 1, true> {
@@ -111,8 +111,8 @@ struct print_tuple<T, 1, true> {
 };
 
 /**
- * Специализация класса print_tuple, заглушка для пустого кортежа.
- * @tparam T имеет тип std::tuple<>.
+ * РЎРїРµС†РёР°Р»РёР·Р°С†РёСЏ РєР»Р°СЃСЃР° print_tuple, Р·Р°РіР»СѓС€РєР° РґР»СЏ РїСѓСЃС‚РѕРіРѕ РєРѕСЂС‚РµР¶Р°.
+ * @tparam T РёРјРµРµС‚ С‚РёРї std::tuple<>.
  */
 template<typename T>
 struct print_tuple<T, 0> {
@@ -121,10 +121,10 @@ struct print_tuple<T, 0> {
 };
 
 /**
- * Вывести кортеж в поток ostream.
- * @tparam T имеет тип std::tuple.
- * @param ostream ссылка на поток вывода.
- * @param value значение, которое необходимо вывести в формате ip.
+ * Р’С‹РІРµСЃС‚Рё РєРѕСЂС‚РµР¶ РІ РїРѕС‚РѕРє ostream.
+ * @tparam T РёРјРµРµС‚ С‚РёРї std::tuple.
+ * @param ostream СЃСЃС‹Р»РєР° РЅР° РїРѕС‚РѕРє РІС‹РІРѕРґР°.
+ * @param value Р·РЅР°С‡РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ РЅРµРѕР±С…РѕРґРёРјРѕ РІС‹РІРµСЃС‚Рё РІ С„РѕСЂРјР°С‚Рµ ip.
  */
 template<typename T>
 typename std::enable_if_t<is_tuple<T>(), void>
