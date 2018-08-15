@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>otus_homework_04: Шаблон структуры is_tuple_imp&lt; T &gt;</title>
+<title>otus_homework_04: Шаблон класса is_tuple&lt; T &gt;</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Классы</span></a></li>
       <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
-      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
       <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
     </ul>
   </div>
@@ -82,32 +81,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="classis__tuple-members.html">Полный список членов класса</a>  </div>
   <div class="headertitle">
-<div class="title">Шаблон структуры is_tuple_imp&lt; T &gt;</div>  </div>
+<div class="title">Шаблон класса is_tuple&lt; T &gt;</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="print__ip_8h_source.html">print_ip.h</a>&gt;</code></p>
-<div class="dynheader">
-Граф наследования:is_tuple_imp&lt; T &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="structis__tuple__imp__inherit__graph.png" border="0" usemap="#is__tuple__imp_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="is__tuple__imp_3_01T_01_4_inherit__map" id="is__tuple__imp_3_01T_01_4_inherit__map">
-</map>
-<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
-<div class="dynheader">
-Граф связей класса is_tuple_imp&lt; T &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="structis__tuple__imp__coll__graph.png" border="0" usemap="#is__tuple__imp_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="is__tuple__imp_3_01T_01_4_coll__map" id="is__tuple__imp_3_01T_01_4_coll__map">
-</map>
-<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:ace6fda356c841badda289f6fed86b711"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classis__tuple.html#ace6fda356c841badda289f6fed86b711">value</a> = is_tuple::is_tuple_imp&lt;std::decay_t&lt;T&gt;&gt;::value</td></tr>
+<tr class="memdesc:ace6fda356c841badda289f6fed86b711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хранит значение true, если T является типом std::tuple, else в остальных случаях.  <a href="#ace6fda356c841badda289f6fed86b711">Подробнее...</a><br/></td></tr>
+<tr class="separator:ace6fda356c841badda289f6fed86b711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br/>
-struct is_tuple_imp&lt; T &gt;</h3>
+class is_tuple&lt; T &gt;</h3>
 
-<p>Вспомогательный класс для реализации класса <a class="el" href="structis__tuple.html">is_tuple</a>. </p>
-</div><hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<p>Класс, позволяющий определить является ли тип T типом std::tuple. </p>
+</div><h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="ace6fda356c841badda289f6fed86b711"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool <a class="el" href="classis__tuple.html">is_tuple</a>&lt; T &gt;::value = is_tuple::is_tuple_imp&lt;std::decay_t&lt;T&gt;&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Хранит значение true, если T является типом std::tuple, else в остальных случаях. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
 <li>inc/<a class="el" href="print__ip_8h_source.html">print_ip.h</a></li>
 </ul>
 </div><!-- contents -->
