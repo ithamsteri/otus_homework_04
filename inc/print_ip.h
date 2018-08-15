@@ -6,26 +6,21 @@
 #include <tuple>
 
 /**
- * Вспомогательный класс для реализации класса is_tuple.
- */
-template<typename T>
-struct is_tuple_imp : std::false_type {
-};
-
-/**
- * Вспомогательный класс для реализации класса is_tuple.
- */
-template<typename... U>
-struct is_tuple_imp<std::tuple<U...>> : std::true_type {
-};
-
-/**
  * Класс, позволяющий определить является ли тип T типом std::tuple.
  */
 template<typename T>
-struct is_tuple {
+class is_tuple {
+    template<typename U>
+    struct is_tuple_imp : std::false_type {
+    };
+
+    template<typename... U>
+    struct is_tuple_imp<std::tuple<U...>> : std::true_type {
+    };
+
+  public:
     /// Хранит значение true, если T является типом std::tuple, else в остальных случаях.
-    static constexpr bool value = is_tuple_imp<std::decay_t<T>>::value;
+    static constexpr bool value = is_tuple::is_tuple_imp<std::decay_t<T>>::value;
 };
 
 namespace ip {
