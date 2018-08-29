@@ -1,10 +1,5 @@
-#include "../lib/version.h"
-#include "gtest/gtest.h"
-#include "../inc/print_ip.h"
-
-TEST(lib, version) {
-    EXPECT_GT(version(), 0);
-}
+#include "print_ip.h"
+#include <gtest/gtest.h>
 
 TEST(is_tuple, is_tuple_true) {
     using t0 = std::tuple<>;
