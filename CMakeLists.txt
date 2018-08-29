@@ -13,13 +13,11 @@ set(APP_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
 
 # create application target
 add_executable(${APP_TARGET} "${APP_SOURCE_DIR}/main.cpp")
-# add include directory in target
-target_include_directories(${APP_TARGET} PRIVATE ${APP_INCLUDE_DIR})
-
 set_target_properties(
         ${PROJECT_NAME} PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
+        INCLUDE_DIRECTORIES "${APP_INCLUDE_DIR}"
 )
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
