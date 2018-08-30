@@ -12,7 +12,7 @@ set(APP_SOURCE_DIR "${CMAKE_SOURCE_DIR}/src")
 set(APP_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
 
 # set warning flags for popular compilers
-function(set_warnings_flags target)
+function(set_warning_flags target)
         if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
                 target_compile_options(${target} PRIVATE "-Wall" "-Wextra" "-pedantic")
         elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
@@ -22,7 +22,7 @@ endfunction()
 
 # create application target
 add_executable(${APP_TARGET} "${APP_SOURCE_DIR}/main.cpp")
-set_warnings_flags(${APP_TARGET})
+set_warning_flags(${APP_TARGET})
 set_target_properties(
         ${PROJECT_NAME} PROPERTIES
         CXX_STANDARD 14
