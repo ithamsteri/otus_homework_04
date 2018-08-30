@@ -14,9 +14,9 @@ set(APP_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
 # set warning flags for popular compilers
 function(set_warnings_flags target)
         if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-                target_compile_options(${APP_TARGET} PRIVATE "-Wall" "-Wextra" "-pedantic")
+                target_compile_options(${target} PRIVATE "-Wall" "-Wextra" "-pedantic")
         elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-                target_compile_options(${APP_TARGET} PRIVATE "/Wall")
+                target_compile_options(${target} PRIVATE "/Wall")
         endif()
 endfunction()
 
